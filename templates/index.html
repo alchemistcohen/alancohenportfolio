@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Fecha de Vencimiento</title>
+</head>
+<body>
+    <h1>Calculadora de Fecha de Vencimiento</h1>
+    <form action="/calcular" method="post">
+        <label for="opcion">Elija una opción:</label><br>
+        <select id="opcion" name="opcion" required>
+            <option value="elaboracion">Utilizando Fecha de Elaboración y Vida Útil</option>
+            <option value="juliana">Utilizando Fecha Juliana y Vida Útil</option>
+        </select><br><br>
+
+        <div id="elaboracion_fields">
+            <label for="fecha_elaboracion">Fecha de Elaboración (YYYY-MM-DD):</label><br>
+            <input type="date" id="fecha_elaboracion" name="fecha_elaboracion"><br><br>
+        </div>
+
+        <div id="juliana_fields" style="display:none;">
+            <label for="fecha_juliana">Fecha Juliana (YYYYJJJ):</label><br>
+            <input type="text" id="fecha_juliana" name="fecha_juliana"><br><br>
+        </div>
+
+        <label for="vida_util">Vida Útil (días):</label><br>
+        <input type="number" id="vida_util" name="vida_util" required><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <script>
+        document.getElementById('opcion').addEventListener('change', function() {
+            if (this.value == 'elaboracion') {
+                document.getElementById('elaboracion_fields').style.display = 'block';
+                document.getElementById('juliana_fields').style.display = 'none';
+            } else {
+                document.getElementById('elaboracion_fields').style.display = 'none';
+                document.getElementById('juliana_fields').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

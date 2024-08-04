@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado del Cálculo</title>
+</head>
+<body>
+    <h1>Resultado del Cálculo</h1>
+    {% if fecha_vencimiento %}
+        <p>Fecha de Vencimiento: {{ fecha_vencimiento }}</p>
+    {% endif %}
+    {% if fecha_juliana %}
+        <p>Fecha Juliana: {{ fecha_juliana }}</p>
+    {% endif %}
+    {% if fecha_elaboracion %}
+        <p>Fecha de Elaboración: {{ fecha_elaboracion }}</p>
+    {% endif %}
+    <a href="/">Regresar</a>
+</body>
+</html>
